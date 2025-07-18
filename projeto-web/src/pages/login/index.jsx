@@ -1,7 +1,10 @@
-import Hello from "../../components/imagem";
+import Imagem from "../../components/logo-login";
+import { Container } from "./style";
 
 export function Login() {
     return(
-            <Hello/>
+        <Container>
+            <Imagem/>
+        </Container>
     );
 }
