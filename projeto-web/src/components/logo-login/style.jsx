@@ -4,7 +4,7 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #00008b;
+    background: linear-gradient(to top right, #000112, #000352);
 `
 
 export const Imagem = styled.img`
