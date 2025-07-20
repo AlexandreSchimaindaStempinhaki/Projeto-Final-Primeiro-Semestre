@@ -21,7 +21,7 @@ export const Dados = styled.div`
     // background-color: #000000;
 `;
 
-export const Nome = styled.h3`
+export const SubNome = styled.h3`
     font-size: 2vw;
     text-shadow: 1px 1px 2px #00022e;
 `;
