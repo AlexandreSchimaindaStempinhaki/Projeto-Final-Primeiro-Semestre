@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+    position: relative;
     width: 100%;
     height: 100%;
     display: flex;
@@ -30,7 +31,7 @@ export const NavigationItem = styled.div`
     }
 
     @media (max-width: 800px){
-        font-size: 5vw;
+        display: none;
     }
 `;
 
@@ -60,3 +61,71 @@ export const Logo = styled.img`
     width: auto;
 `;
 
+export const Menu = styled.img`
+    height: 10vh;
+    width: auto;
+    margin: 2vw;
+    cursor: pointer;
+    display: block;
+
+    @media (min-width: 800px){
+        display: none;
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    ${({ desativado }) => 
+        desativado && `
+            display: none;
+        `
+    }
+`;
+
+export const SubMenu = styled.div`
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 40vw;
+    height: 100%;
+    border-right: 0.5vw solid #ffffff;
+    border-radius: 2vh;
+
+    @media (min-width: 800px){
+        display: none;
+    }
+`;
+
+export const SubMenuOption = styled.h1`
+    width: 80%;
+    border-radius: 2vh;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+        background-color: #000008;
+    }
+`
+
+export const SubMenuTexto = styled.h1`
+    font-size: 4vw;
+    color: #ffffff;
+    margin: 0;
+
+`;
+
+export const FecharMenu = styled.img`
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 5vw;
+    height: auto;
+    cursor: pointer;
+    margin: 1vw;
+
+    &:hover {
+        opacity: 0.5;
+    }
+`
