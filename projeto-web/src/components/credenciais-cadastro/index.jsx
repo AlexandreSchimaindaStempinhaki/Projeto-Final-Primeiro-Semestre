@@ -31,7 +31,7 @@ export default function Credenciais_Cadastro() {
                 <TextSenha id = "senhaConfirmar" name = "senhaConfirmar" value = {senhaConfirmar}
                 onChange={(e) => setSenhaConfirmar(e.target.value)}/>
 
-                <BotaoCadastrar />
+                <BotaoCadastrar onClick={() => navigate('/')}/>
                 <Logar onClick={() => navigate('/')}>Já tem uma conta? Logue clicando aqui</Logar>
             </Dados>
         </Container>

@@ -33,9 +33,9 @@ export default function CredenciaisLogin(){
                 <BotaoLogar onClick={() => navigate('/produtos')}/>
                 <Cadastrar onClick={() => navigate('/cadastro')}>Não tem conta? Faça seu cadastro clicando aqui!</Cadastrar>
 
-                <LoginsAlternativos> <img src = {Google}/> Continuar com o Google </LoginsAlternativos>
-                <LoginsAlternativos> <img src = {Apple}/> Continuar com a Apple </LoginsAlternativos>
-                <LoginsAlternativos> <img src = {Facebook}/> Continuar com o Facebook </LoginsAlternativos>
+                <LoginsAlternativos onClick={() => navigate('/produtos')}> <img src = {Google}/> Continuar com o Google </LoginsAlternativos>
+                <LoginsAlternativos onClick={() => navigate('/produtos')}> <img src = {Apple}/> Continuar com a Apple </LoginsAlternativos>
+                <LoginsAlternativos onClick={() => navigate('/produtos')}> <img src = {Facebook}/> Continuar com o Facebook </LoginsAlternativos>
             </Dados>
         </Container>
     )

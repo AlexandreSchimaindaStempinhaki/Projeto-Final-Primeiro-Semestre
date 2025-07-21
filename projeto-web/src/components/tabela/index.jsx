@@ -1,11 +1,11 @@
-import { Container, SubContainer, ComponenteTabela, Th, Td, Linha, BotaoAcao } from './style';
+import { Container, SubContainer, ComponenteTabela, Th, Td, Linha, BotaoAcao, QuadradoBotaoAcao, DivisaoIcons } from './style';
 
 import ImagemInfo from '../../../public/images/info.png'
 import ImagemEdit from '../../../public/images/edit.png'
 import ImagemDelete from '../../../public/images/delete.png'
 
 
-export default function Tabela(props){
+export default function Tabela(props) {
     return (
         <Container>
             <SubContainer>
@@ -14,7 +14,7 @@ export default function Tabela(props){
                         <tr>
                             {
                                 props.columns.map((col, id) => (
-                                    <Th key = {id} className = {`coluna-${id}`}>{col}</Th>
+                                    <Th key={id} className={`coluna-${id}`}>{col}</Th>
                                 ))
                             }
                         </tr>
@@ -22,22 +22,24 @@ export default function Tabela(props){
                     <tbody>
                         {
                             props.data.map((row, idl) => (
-                                <Linha key = {idl} isEven={idl % 2 === 0}>
+                                <Linha key={idl} isEven={idl % 2 === 0}>
                                     {
                                         props.keys.map((col, idc) => (
-                                            <Td key = {idc} className = {`coluna-${idc}`}>{row[col]}</Td>
+                                            <Td key={idc} isEven={idl % 2 === 0} className={`coluna-${idc}`}>{row[col]}</Td>
                                         ))
                                     }
-                                     <Td>
-                                        <BotaoAcao src = {ImagemInfo}/>
-                                        {
-                                            ((props.type === 'vendas' && row.status === 'Pendente') || props.type === 'produtos') && (
-                                                <span>
-                                                    <BotaoAcao src = {ImagemEdit}/>
-                                                    <BotaoAcao src = {ImagemDelete}/>
-                                                </span>
-                                            )
-                                        }
+                                    <Td>
+                                        <DivisaoIcons>
+                                            <QuadradoBotaoAcao style={{ backgroundColor: '#008000'}}> <BotaoAcao src={ImagemInfo} alt="Ícone Info" /> </QuadradoBotaoAcao>
+                                            {
+                                                ((props.type === 'vendas' && row.status === 'Pendente') || props.type === 'produtos') && (
+                                                    <span>
+                                                        <QuadradoBotaoAcao style={{ backgroundColor: '#ffa500' }}> <BotaoAcao src={ImagemEdit} alt="Ícone Edit" /> </QuadradoBotaoAcao>
+                                                        <QuadradoBotaoAcao style={{ backgroundColor: '#ff0000' }}> <BotaoAcao src={ImagemDelete} alt="Ícone Delete" /> </QuadradoBotaoAcao>
+                                                    </span>
+                                                )
+                                            }
+                                        </DivisaoIcons>
                                     </Td>
                                 </Linha>
                             ))
@@ -45,6 +47,6 @@ export default function Tabela(props){
                     </tbody>
                 </ComponenteTabela>
             </SubContainer>
-        </Container> 
+        </Container>
     )
 }

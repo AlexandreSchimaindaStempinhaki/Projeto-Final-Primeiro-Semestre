@@ -56,8 +56,9 @@ export const Th = styled.th`
 `;
 
 export const Td = styled.td`
+    text-align: center;
     font-size: 1.5vw;
-    color: white;
+    color: ${({ isEven }) => isEven ? '#ffffff' : '#000000'};
     padding: 2vw;
 
     @media (max-width: 800px){
@@ -68,7 +69,8 @@ export const Td = styled.td`
 `;
 
 export const Linha = styled.tr`
-    background-color: ${({ isEven }) => isEven ? '#00001a' : '#000040'};
+    position: relative;
+    background-color: ${({ isEven }) => isEven ? '#00001d' : '#ffffff'};
 
     &:hover {
         opacity: 0.9;
@@ -78,10 +80,25 @@ export const Linha = styled.tr`
 export const BotaoAcao = styled.img`
     width: 3vw;
     height: auto;
-    margin: 0.5vw;
     cursor: pointer;
+`;
+
+export const QuadradoBotaoAcao = styled.div`
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4vw;
+    height: 4vw;
+    margin: 0.5vw;
+    border-radius: 2vh;
 
     &:hover {
         opacity: 0.5;
     }
 `;
+
+export const DivisaoIcons = styled.div`
+    width: 15vw;
+    display: inline-block;
+    text-align: start;
+`
