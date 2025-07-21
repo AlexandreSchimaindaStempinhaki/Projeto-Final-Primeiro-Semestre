@@ -4,7 +4,7 @@ export const Container = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
-    align-items : center;
+    align-items: center;
     flex-direction: row;
     background: linear-gradient(to top right, #000112, #000352);
 `;
@@ -28,28 +28,11 @@ export const NavigationItem = styled.div`
     transition: 0.5s ease;
     background-color: #000000;
     }
-`;
 
-export const ImagemPerfil = styled.img`
-    height: 10vh;
-    width: auto;
-    margin-left: auto;
-
-    @media (max-width: 800px) {
-        display: none;
-    }
-`
-
-export const NomeUsuario = styled.h2`
-    color: white;
-    font-size: 1.8vw;
-    margin-left: 1vw;
-
-    @media (max-width: 800px) {
-        display: none;
+    @media (max-width: 800px){
+        font-size: 5vw;
     }
 `;
-
 
 export const Logout = styled.input.attrs({type: 'submit', value: 'Logout'})`
     all: unset;
@@ -64,6 +47,11 @@ export const Logout = styled.input.attrs({type: 'submit', value: 'Logout'})`
 
     &:hover {
         opacity: 0.8;
+    }
+
+    @media (max-width: 800px){
+        width: 16vw;
+        font-size: 4vw;
     }
 `;
 

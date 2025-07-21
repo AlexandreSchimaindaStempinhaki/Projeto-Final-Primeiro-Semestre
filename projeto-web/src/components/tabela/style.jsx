@@ -61,7 +61,7 @@ export const Td = styled.td`
     color: ${({ isEven }) => isEven ? '#ffffff' : '#000000'};
     padding: 2vw;
 
-    @media (max-width: 800px){
+    @media (max-width: 900px){
         font-size: 3vw;
     }
 
@@ -81,6 +81,10 @@ export const BotaoAcao = styled.img`
     width: 3vw;
     height: auto;
     cursor: pointer;
+
+    @media (max-width: 800px){
+        width: 6vw;
+    }
 `;
 
 export const QuadradoBotaoAcao = styled.div`
@@ -95,10 +99,20 @@ export const QuadradoBotaoAcao = styled.div`
     &:hover {
         opacity: 0.5;
     }
+    
+    @media (max-width: 800px){
+        width: 8vw;
+        height: 8vw;
+        margin: 1vw;
+    }
 `;
 
 export const DivisaoIcons = styled.div`
     width: 15vw;
     display: inline-block;
     text-align: start;
+
+    @media (max-width: 800px){
+        width: 30vw;
+    }
 `

@@ -7,7 +7,7 @@ import BarraFiltros from '../barra-filtros';
 import TabelaVendas from '../tabela-vendas';
 
 export default function ContainerVendas() {
-    const secoes = ['Histórico de Vendas', 'Realizar Nova Venda'];
+    const secoes = ['Histórico de Vendas', '???'];
     const secaoInicial = 'Histórico de Vendas';
     const [selecionado, setSelecionado] = useState(secaoInicial);
 

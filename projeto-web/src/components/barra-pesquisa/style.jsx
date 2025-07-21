@@ -10,6 +10,11 @@ export const Container = styled.div`
 export const TextPesquisa = styled(TextEmail).attrs({ type: 'search' })`
     width: 70%;
     margin: 2vh;
+    font-size: 2vw;
+
+    @media (max-width: 800px){
+        font-size: 4vw;
+    }
 `;
 
 export const BotaoBuscar = styled.button`
@@ -52,10 +57,18 @@ export const BotaoAdicionarProduto = styled(BotaoBuscar)`
     justify-content: center;
     padding-left: 0.5vw;
     font-size: 1vw;
+
+    @media (max-width: 800px){
+        font-size: 1.75vw;
+    }
 `;
 
 export const Mais = styled.img`
     width: 3vw;
     height: auto;
     margin-left; auto;
+
+    @media (max-width: 800px){
+        display: none;
+    }
 `

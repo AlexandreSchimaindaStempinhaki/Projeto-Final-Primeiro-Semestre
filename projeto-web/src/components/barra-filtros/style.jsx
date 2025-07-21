@@ -21,14 +21,21 @@ export const EscolherFiltro = styled.select`
     &:hover {
         opacity: 0.5;
     }
+
+    @media (max-width: 800px){
+        font-size: 3vw;
+    }
+
 `;
 
-export const OpcaoFiltro = styled.option`
-    border-radius: 2vh;
-`;
+export const OpcaoFiltro = styled.option``;
 
 export const BotaoFiltrar = styled(BotaoAdicionarProduto)`
     font-size: 1.5vw;
+
+    @media (max-width: 800px){
+        font-size: 3vw;
+    }
 `;
 
 export const Filtro = styled(Mais)``;

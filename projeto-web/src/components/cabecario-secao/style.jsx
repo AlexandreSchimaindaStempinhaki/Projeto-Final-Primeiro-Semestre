@@ -34,4 +34,9 @@ export const Option = styled.h1`
         width: 125%;
         opacity: 1;
     }
+
+    @media (max-width: 800px){
+        font-size: 3.5vw;
+        margin: 4vw;
+    }
 `;
