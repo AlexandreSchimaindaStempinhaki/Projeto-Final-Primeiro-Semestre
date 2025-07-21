@@ -1,26 +1,28 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router';
-import { Container, NavigationItem, ImagemPerfil, NomeUsuario, Logout, Logo } from './style';
+import { useNavigate, useLocation } from 'react-router';
+import { Container, NavigationItem, Logout, Logo } from './style';
 
-import ImagemLogo from '../../images/logo.png'
-import User from '../../images/user.png'
+import ImagemLogo from '../../../public/images/logo.png'
 
 export default function BarraNavegacao(){
-    const [ativo, setAtivo] = useState('produtos');
+
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const ativo = location.pathname.includes('/produtos') ? 'produtos' :
+                  location.pathname.includes('/vendas') ? 'venda' : '';
 
     return (
         <Container>            
             <NavigationItem
             className = {ativo === 'produtos' ? 'active' : ''}
-            onClick={() => setAtivo('produtos')}>
+            onClick={() => navigate('/produtos')}>
                 Produtos
             </NavigationItem>
 
             <NavigationItem
             className = {ativo === 'venda' ? 'active' : ''}
-            onClick={() => setAtivo('venda')}>
-                Venda
+            onClick={() => navigate('/vendas')}>
+                Vendas
             </NavigationItem>
 
             

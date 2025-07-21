@@ -68,7 +68,7 @@ export const Td = styled.td`
 `;
 
 export const Linha = styled.tr`
-    background-color: ${({ isEven }) => isEven ? '#000112' : '#000352'};
+    background-color: ${({ isEven }) => isEven ? '#00001a' : '#000040'};
 
     &:hover {
         opacity: 0.9;

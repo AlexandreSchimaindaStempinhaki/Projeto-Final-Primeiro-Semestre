@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router';
 import { Container, Dados, SubNome, TextEmail, LoginsAlternativos} from '../credenciais-login/style';
 import { Titulo, SubTitulo, BotaoEnviar} from './style';
 
-import Google from '../../images/google.png';
-import Apple from '../../images/apple.png';
-import Facebook from '../../images/facebook.png';
+import Google from '../../../public/images/google.png';
+import Apple from '../../../public/images/apple.png';
+import Facebook from '../../../public/images/facebook.png';
 
 export default function RecuperarSenha() {
 

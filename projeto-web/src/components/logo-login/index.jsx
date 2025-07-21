@@ -1,5 +1,5 @@
 import { Container, Imagem, Rodape } from './style';
-import LinkImagem from '../../images/logo.png';
+import LinkImagem from '../../../public/images/logo.png';
 
 export default function Logo() {
     return (

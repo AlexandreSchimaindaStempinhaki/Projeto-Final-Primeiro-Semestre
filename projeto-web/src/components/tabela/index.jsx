@@ -1,8 +1,8 @@
 import { Container, SubContainer, ComponenteTabela, Th, Td, Linha, BotaoAcao } from './style';
 
-import ImagemInfo from '../../images/info.png'
-import ImagemEdit from '../../images/edit.png'
-import ImagemDelete from '../../images/delete.png'
+import ImagemInfo from '../../../public/images/info.png'
+import ImagemEdit from '../../../public/images/edit.png'
+import ImagemDelete from '../../../public/images/delete.png'
 
 
 export default function Tabela(props){
@@ -30,8 +30,14 @@ export default function Tabela(props){
                                     }
                                      <Td>
                                         <BotaoAcao src = {ImagemInfo}/>
-                                        <BotaoAcao src = {ImagemEdit}/>
-                                        <BotaoAcao src = {ImagemDelete}/>
+                                        {
+                                            ((props.type === 'vendas' && row.status === 'Pendente') || props.type === 'produtos') && (
+                                                <span>
+                                                    <BotaoAcao src = {ImagemEdit}/>
+                                                    <BotaoAcao src = {ImagemDelete}/>
+                                                </span>
+                                            )
+                                        }
                                     </Td>
                                 </Linha>
                             ))

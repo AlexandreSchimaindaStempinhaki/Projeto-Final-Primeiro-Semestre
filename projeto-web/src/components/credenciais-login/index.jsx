@@ -6,12 +6,12 @@ import {
     TextSenha, SenhaPerdida, BotaoLogar, Cadastrar, LoginsAlternativos
     } from './style';
 
-import Google from '../../images/google.png';
-import Apple from '../../images/apple.png';
-import Facebook from '../../images/facebook.png';
+import Google from '../../../public/images/google.png';
+import Apple from '../../../public/images/apple.png';
+import Facebook from '../../../public/images/facebook.png';
 
 
-export default function Credenciais_Login(){
+export default function CredenciaisLogin(){
 
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
