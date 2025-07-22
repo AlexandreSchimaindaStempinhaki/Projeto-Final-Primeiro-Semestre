@@ -157,63 +157,65 @@ export const dataVendas = [
   {
     saleId: 1,
     saleDate: "20/07/2025",
-    totalAmount: 349.90,
+    totalAmount: 'R$ 349,90',
     status: "Concluída"
   },
   {
     saleId: 2,
     saleDate: "20/07/2025",
-    totalAmount: 1299.00,
+    totalAmount: 'R$ 1299,00',
     status: "Pendente"
   },
   {
     saleId: 3,
     saleDate: "21/07/2025",
-    totalAmount: 85.75,
+    totalAmount: 'R$ 85,75',
     status: "Cancelada"
   },
   {
     saleId: 4,
     saleDate: "21/07/2025",
-    totalAmount: 215.00,
+    totalAmount: 'R$ 215,00',
     status: "Concluída"
   },
   {
     saleId: 5,
     saleDate: "21/07/2025",
-    totalAmount: 499.99,
+    totalAmount: 'R$ 499,99',
     status: "Concluída"
   },
   {
     saleId: 6,
     saleDate: "22/07/2025",
-    totalAmount: 145.30,
+    totalAmount: 'R$ 145,30',
     status: "Pendente"
   },
   {
     saleId: 7,
     saleDate: "22/07/2025",
-    totalAmount: 999.99,
+    totalAmount: 'R$ 999,99',
     status: "Concluída"
   },
   {
     saleId: 8,
     saleDate: "23/07/2025",
-    totalAmount: 350.00,
+    totalAmount: 'R$ 350,00',
     status: "Cancelada"
   },
   {
     saleId: 9,
     saleDate: "23/07/2025",
-    totalAmount: 789.50,
+    totalAmount: 'R$ 789,50',
     status: "Concluída"
   },
   {
     saleId: 10,
     saleDate: "24/07/2025",
-    totalAmount: 199.90,
+    totalAmount: 'R$ 199,90',
     status: "Pendente"
   }
 ];
+
+
 
 
