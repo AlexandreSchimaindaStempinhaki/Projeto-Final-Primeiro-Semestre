@@ -6,6 +6,8 @@ import ImagemDelete from '../../images-geral/images/delete.png'
 
 
 export default function Tabela(props) {
+
+    
     return (
         <Container>
             <SubContainer>
