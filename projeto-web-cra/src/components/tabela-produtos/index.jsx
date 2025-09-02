@@ -9,11 +9,9 @@ import Client from '../../api/client';
 export default function TabelaProdutos(props) {
 
     const [data, setData] = useState([])
-    const [load, setLoad] = useState(true)
 
     function fetchData() {
 
-        setLoad(true)
         setTimeout(() => {
             
             Client.get('users').then(res => {
@@ -23,10 +21,6 @@ export default function TabelaProdutos(props) {
             .catch(function(error) {
                 console.log(error)
             })
-            .finally( () => {
-                setLoad(false)
-            })
-
         }, 1000)
     }
 
