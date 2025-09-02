@@ -15,7 +15,7 @@ export default function TabelaProdutos(props) {
         setTimeout(() => {
             
             Client.get('users').then(res => {
-                const users = res.data
+                const users = res.data.data;
                 setData(users)  
             })
             .catch(function(error) {

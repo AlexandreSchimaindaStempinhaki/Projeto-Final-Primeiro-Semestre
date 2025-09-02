@@ -33,7 +33,7 @@ export default function EditData({ aberto, fechado, salvar, dataInicial }) {
                 </Titulo>
 
                 <SubNome>Nome</SubNome>
-                <TextNome id="nome" name="nome" value={formatarData.name}
+                <TextNome id="nome" name="name" value={formatarData.name}
                     onChange={atualizarCampos} />
 
                 <SubNome>Email</SubNome>
@@ -41,7 +41,7 @@ export default function EditData({ aberto, fechado, salvar, dataInicial }) {
                     onChange={atualizarCampos} />
 
                 <SubNome>Senha</SubNome>
-                <TextSenha id="senha" name="senha" placeholder='Mínimo de 6 caracteres' value={formatarData.password}
+                <TextSenha id="senha" name="password" placeholder='Mínimo de 6 caracteres' value={formatarData.password}
                     onChange={atualizarCampos} />
 
                 <BotaoContainer>

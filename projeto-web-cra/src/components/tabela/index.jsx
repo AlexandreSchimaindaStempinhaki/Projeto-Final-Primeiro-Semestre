@@ -93,7 +93,7 @@ export default function Tabela(props) {
                     aberto={modalAberto}
                     fechado={() => setModalAberto(false)}
                     salvar={salvarEdicao}
-                    dataInicial={itemSelecionado || { nome: '', email: '', senha: '' }}
+                    dataInicial={itemSelecionado || { name: '', email: '', password: '' }}
             />
         </>
     )
