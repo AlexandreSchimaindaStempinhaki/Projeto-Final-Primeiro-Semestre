@@ -60,6 +60,7 @@
     "@vinejs/vine": "^3.0.1",
     "luxon": "^3.7.2",
     "mysql2": "^3.14.5",
+    "node": "^24.8.0",
     "reflect-metadata": "^0.2.2"
   },
   "hotHook": {
