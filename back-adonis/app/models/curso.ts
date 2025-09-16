@@ -4,7 +4,6 @@ import Aluno from './aluno.js'
 import Disciplina from './disciplina.js'
 import type { HasMany } from '@adonisjs/lucid/types/relations'
 
-
 export default class Curso extends BaseModel {
   @column({ isPrimary: true })
   declare id: number
@@ -21,10 +20,10 @@ export default class Curso extends BaseModel {
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   declare updatedAt: DateTime
 
-  //Relacionamento
-  @hasMany(() => Disciplina, {foreignKey: 'curso_id'})
-  declare  disciplinas: HasMany<typeof Disciplina>
-
-  @hasMany(() => Aluno, {foreignKey: 'curso_id'})
+  // Relacionamentos
+  @hasMany(() => Aluno, { foreignKey: 'curso_id' })
   declare alunos: HasMany<typeof Aluno>
+
+  @hasMany(() => Disciplina, { foreignKey: 'curso_id' })
+  declare disciplinas: HasMany<typeof Disciplina>
 }

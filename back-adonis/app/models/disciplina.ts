@@ -23,10 +23,10 @@ export default class Disciplina extends BaseModel {
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   declare updatedAt: DateTime
 
-  //Relacionamentos
-  @belongsTo(() => Curso, {foreignKey: 'curso_id'})
+  // Relacionamentos
+  @belongsTo(() => Curso, { foreignKey: 'curso_id' })
   declare curso: BelongsTo<typeof Curso>
 
-  @manyToMany(() => Aluno, {pivotTable: 'matriculas'})
+  @manyToMany(() => Aluno, { pivotTable: 'matriculas' })
   declare alunos: ManyToMany<typeof Aluno>
 }
