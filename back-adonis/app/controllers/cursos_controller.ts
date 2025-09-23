@@ -80,6 +80,7 @@ export default class CursosController {
         .preload('disciplinas')
         .preload('alunos')
         .firstOrFail()
+
       return response.status(200).json({
         message: 'OK',
         data: curso,

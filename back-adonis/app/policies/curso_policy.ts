@@ -1,30 +1,34 @@
 import { BasePolicy } from '@adonisjs/bouncer'
 import type { AuthorizerResponse } from '@adonisjs/bouncer/types'
 import User from '#models/user'
+import Curso from '#models/curso'
 import { permissions } from '../utils/permissoes.js'
 
 export default class CursoPolicy extends BasePolicy {
-  public list(user: User | null): AuthorizerResponse {
+  list(user: User | null): AuthorizerResponse {
+    // Se não há usuário logado, negar acesso
     if (!user) return false
     return permissions[user.papel_id].listCurso
   }
-
-  public view(user: User | null): AuthorizerResponse {
+  view(user: User | null): AuthorizerResponse {
+    // Se não há usuário logado, negar acesso
     if (!user) return false
     return permissions[user.papel_id].viewCurso
   }
-
-  public create(user: User | null): AuthorizerResponse {
+  create(user: User | null): AuthorizerResponse {
+    // Se não há usuário logado, negar acesso
     if (!user) return false
     return permissions[user.papel_id].createCurso
   }
 
-  public edit(user: User | null): AuthorizerResponse {
+  edit(user: User | null): AuthorizerResponse {
+    // Se não há usuário logado, negar acesso
     if (!user) return false
     return permissions[user.papel_id].editCurso
   }
 
-  public delete(user: User | null): AuthorizerResponse {
+  delete(user: User | null): AuthorizerResponse {
+    // Se não há usuário logado, negar acesso
     if (!user) return false
     return permissions[user.papel_id].deleteCurso
   }
