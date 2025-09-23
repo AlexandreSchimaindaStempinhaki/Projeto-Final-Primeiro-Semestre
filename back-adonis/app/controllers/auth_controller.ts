@@ -7,40 +7,37 @@ export default class AuthController {
    * Registrar um novo usuário
    */
   async register({ request, response }: HttpContext) {
-  try {
-    console.log('Starting registration...');
-    const payload = await request.validateUsing(registerValidator);
-    const user = await User.create(payload);
-    console.log('User created', user);
+    try {
+      const payload = await request.validateUsing(registerValidator)
+      const user = await User.create(payload)
 
-    const token = await User.accessTokens.create(user, ['*'], {
-      name: 'Registration Token',
-      expiresIn: '30 days',
-    });
-    console.log('Token created', token);
+      // Criar token de acesso para o usuário recém-registrado
+      const token = await User.accessTokens.create(user, ['*'], {
+        name: 'Registration Token',
+        expiresIn: '30 days',
+      })
 
-    return response.created({
-      message: 'Usuário registrado com sucesso',
-      user: {
-        id: user.id,
-        fullName: user.fullName,
-        email: user.email,
-        createdAt: user.createdAt,
-      },
-      token: {
-        type: 'bearer',
-        value: token.value!.release(),
-        expiresAt: token.expiresAt,
-      },
-    });
-  } catch (error) {
-    console.error('Error during registration:', error);
-    return response.badRequest({
-      message: 'Erro ao registrar usuário',
-      errors: error.messages || error.message,
-    });
+      return response.created({
+        message: 'Usuário registrado com sucesso',
+        user: {
+          id: user.id,
+          fullName: user.fullName,
+          email: user.email,
+          createdAt: user.createdAt,
+        },
+        token: {
+          type: 'bearer',
+          value: token.value!.release(),
+          expiresAt: token.expiresAt,
+        },
+      })
+    } catch (error) {
+      return response.badRequest({
+        message: 'Erro ao registrar usuário',
+        errors: error.messages || error.message,
+      })
+    }
   }
-}
 
   /**
    * Fazer login do usuário
@@ -68,7 +65,7 @@ export default class AuthController {
           type: 'bearer',
           value: token.value!.release(),
           expiresAt: token.expiresAt,
-        }
+        },
       })
     } catch (error) {
       return response.unauthorized({
@@ -131,14 +128,14 @@ export default class AuthController {
       const tokens = await User.accessTokens.all(user)
 
       return response.ok({
-        tokens: tokens.map(token => ({
+        tokens: tokens.map((token) => ({
           name: token.name,
           type: token.type,
           abilities: token.abilities,
           lastUsedAt: token.lastUsedAt,
           expiresAt: token.expiresAt,
           createdAt: token.createdAt,
-        }))
+        })),
       })
     } catch (error) {
       return response.unauthorized({
