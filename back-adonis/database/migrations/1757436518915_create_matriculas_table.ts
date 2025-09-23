@@ -5,7 +5,6 @@ export default class extends BaseSchema {
 
   async up() {
     this.schema.createTable(this.tableName, (table) => {
-
       table.integer('aluno_id').unsigned().references('id').inTable('alunos').primary()
       table.integer('disciplina_id').unsigned().references('id').inTable('disciplinas').primary()
 
